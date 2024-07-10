@@ -1,0 +1,20 @@
+.Navbar {
+    width: 300px;
+    background-color: bisque;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    padding-bottom: 10px;
+}
+
+nav a:last-child {
+    padding-bottom: 0;
+}
