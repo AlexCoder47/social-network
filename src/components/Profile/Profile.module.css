@@ -1,0 +1,15 @@
+.Profile {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Profile > img {
+    width: 1000px;
+    height: 500px;
+}
+
+.comment > img {
+    width: 70px;
+}

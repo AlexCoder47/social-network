@@ -2,11 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-// import Main from './components/Main/Main';
-// import AboutMe from './components/AboutMe/AboutMe';
-// import Projects from './components/Projects/Projects';
-// import Contacts from './components/Contacts/Contacts';
-// import Footer from './components/Footer';
+import Profile from './components/Profile/Profile';
+import Dialogs from './components/Dialogs/Dialogs';
 
 function App() {
   return (
@@ -16,7 +13,8 @@ function App() {
         <div className='main'>
           <Navbar />
           <Routes>
-            {/* <Route path="*" element={<Main />} /> */}
+            <Route path="/" element={<Profile ava="https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg"/>} />
+            <Route path="/dialogs" element={<Dialogs />} />
           </Routes>
         </div>
       </BrowserRouter>
