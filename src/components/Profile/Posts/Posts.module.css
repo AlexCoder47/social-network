@@ -1,0 +1,19 @@
+.Posts {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.addPost {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+}
+
+input {
+    width: 250px;
+}

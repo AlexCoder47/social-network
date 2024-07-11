@@ -1,0 +1,15 @@
+.post {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post > img {
+    width: 70px;
+    border-radius: 50px;
+}
+
+.post p {
+    padding: 10px;
+    background-color: #fff;
+}
