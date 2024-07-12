@@ -1,0 +1,36 @@
+.Dialogs {
+    display: flex;
+}
+
+.Messages {
+    font-size: 18px;
+    padding: 20px;
+}
+
+.Message {
+    margin: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.DialogsList {
+    background-color:blanchedalmond;
+    width: 200px;
+    min-height: 93vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    text-align: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.Dialog a {
+    text-decoration: underline;
+}
+
+
+.active a {
+    text-decoration: none;
+}
