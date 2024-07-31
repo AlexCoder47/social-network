@@ -1,0 +1,12 @@
+.friend {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: start;
+    margin: 20px auto;
+}
+
+.friend img {
+    width: 40px;
+    border-radius: 50px;
+}
