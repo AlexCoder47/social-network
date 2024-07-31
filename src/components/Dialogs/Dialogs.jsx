@@ -15,25 +15,11 @@ const Message = (props) => {
     )
 }
 
-const Dialogs = () => {
+const Dialogs = (props) => {
 
-    let DialogsData = [
-        { id: 1, name: "Dima" },
-        { id: 2, name: "Egor" },
-        { id: 3, name: "Anton" },
-        { id: 4, name: "Stepik" },
-    ]
+    let DialogsElements = props.state.dialogs.map ( e => <Dialog id={e.id} name={e.name} /> )
 
-    let MessagesData = [
-        { id: 1, message: "Hello" },
-        { id: 2, message: "How are you" },
-        { id: 3, message: "That`s cool" },
-        { id: 3, message: "Artur Mooorgan" },
-    ]
-
-    let DialogsElements = DialogsData.map ( e => <Dialog id={e.id} name={e.name} /> )
-
-    let MessagesElements = MessagesData.map ( e => <Message message={e.message} />)
+    let MessagesElements = props.state.messages.map ( e => <Message message={e.message} />)
     
     return (
         <div className={s.Dialogs}>
