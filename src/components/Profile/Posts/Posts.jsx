@@ -1,3 +1,4 @@
+import React from 'react';
 import Post from './Post/Post';
 import s from './Posts.module.css';
 
@@ -5,11 +6,18 @@ const Posts = (props) => {
 
     let PostsElememts = props.posts.map (e => <Post ava={e.ava} text={e.text}/>)
 
+    let newPost = React.createRef();
+
+    let addPost = () => {
+        let text = newPost.current.value;
+        alert(text);
+    }
+
     return (
         <div className={s.Posts}> 
             <div className={s.addPost}>
-               <input type="text" />
-               <button>Send</button>
+               <input type="text" ref={newPost}/>
+               <button onClick={addPost}>Send</button>
             </div>
 
             {PostsElememts}
