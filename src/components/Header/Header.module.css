@@ -1,7 +1,13 @@
 .Header {
     height: 60px;
-    background-color: aquamarine;
+    background-color: #151515;
     font-size: 35px;
     padding-left: 10px;
     padding-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.Header p {
+    color: #FFDB00;
 }

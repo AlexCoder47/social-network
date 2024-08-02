@@ -1,8 +1,11 @@
 .Navbar {
     width: 300px;
     min-height: 92vh;
-    background-color: bisque;
+    background-color: #151515;
     font-size: 20px;
+    color: #FFDB00;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 nav {

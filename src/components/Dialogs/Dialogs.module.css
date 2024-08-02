@@ -1,5 +1,10 @@
 .Dialogs {
     display: flex;
+    width: 82vw;
+    background-color: #3e3e3e;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #FFDB00;
 }
 
 .Messages {
@@ -9,13 +14,13 @@
 
 .Message {
     margin: 10px;
-    background-color: #fff;
+    background-color: #2d2d2d;
     padding: 10px;
     border-radius: 50px;
 }
 
 .DialogsList {
-    background-color:blanchedalmond;
+    background-color:rgb(31, 31, 31);
     width: 200px;
     min-height: 93vh;
     display: flex;
@@ -33,4 +38,19 @@
 
 .active a {
     text-decoration: none;
+}
+
+.inputBlock {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+}
+
+input {
+    width: 250px;
 }

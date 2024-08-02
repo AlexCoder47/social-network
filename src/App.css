@@ -8,8 +8,14 @@ a {
   padding: 0;
 }
 
+body {
+  background-color: #373A40;
+  padding: 10px;
+  color: white;
+}
+
 .main {
   display: flex;
   justify-content: flex-start;
-  background-color: rgb(227, 239, 239) ;
+  min-width: 100%;
 }
