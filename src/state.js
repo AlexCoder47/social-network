@@ -35,6 +35,7 @@ let state = {
                 text: "that`s cool",
             },
         ],
+        newPostText: ""
     },
 
     navbar: {
@@ -58,14 +59,21 @@ let state = {
 }
 
 
-export let addPost = (postText) => { 
+export let addPost = () => { 
     let newPost = {
         id: 4,
-        text: postText,
+        text: state.profilePage.newPostText,
         ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
     };
 
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText='';
+    rerenderTree(state);
+}
+
+
+export let updatePostText = (newText) => {
+    state.profilePage.newPostText = newText;
     rerenderTree(state);
 }
 

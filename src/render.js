@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { addPost } from './state';
+import { addPost, updatePostText } from './state';
 
 //addPost("Russia");
 
@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 export let rerenderTree = (state) => {
   root.render(
     <React.StrictMode>
-      <App state={state} addPost={addPost}/>
+      <App state={state} addPost={addPost} updatePostText={updatePostText}/>
     </React.StrictMode>
   );
 }

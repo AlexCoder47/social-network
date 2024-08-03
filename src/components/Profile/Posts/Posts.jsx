@@ -9,15 +9,18 @@ const Posts = (props) => {
     let newPost = React.createRef();
 
     let addPost = () => {
+        props.addPost();
+    }
+
+    let onPostChange = () => {
         let text = newPost.current.value;
-        props.addPost(text);
-        newPost.current.value = "";
+        props.updatePostText(text)
     }
 
     return (
         <div className={s.Posts}> 
             <div className={s.addPost}>
-               <input type="text" ref={newPost}/>
+               <input type="text" ref={newPost} value={props.newPostText} onChange={onPostChange}/>
                <button onClick={addPost}>Send</button>
             </div>
 
