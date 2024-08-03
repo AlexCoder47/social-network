@@ -1,3 +1,5 @@
+import { rerenderTree } from "./render";
+
 let state = {
     dialogsPage: {
         dialogs: [
@@ -53,6 +55,18 @@ let state = {
                 name: "Stepik" },
         ],
     }
+}
+
+
+export let addPost = (postText) => { 
+    let newPost = {
+        id: 4,
+        text: postText,
+        ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+    };
+
+    state.profilePage.posts.push(newPost);
+    rerenderTree(state);
 }
 
 export default state;
