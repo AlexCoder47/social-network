@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import s from './Dialogs.module.css';
 import React from 'react';
+import { addMessageActionCreator, updateMessageTextActionCreator } from '../../state';
 
 const Dialog = (props) => {
     return (
@@ -25,12 +26,12 @@ const Dialogs = (props) => {
     let newMessage = React.createRef();
 
     let addMessage = () => {
-        props.dispatch({type: "ADD-MESSAGE"});
+        props.dispatch(addMessageActionCreator());
     }
 
     let onMessageChange = () => {
         let text = newMessage.current.value;
-        props.dispatch({type: "UPDATE-MESSAGE-TEXT", newText: text});
+        props.dispatch(updateMessageTextActionCreator(text));
     }
 
     return (
