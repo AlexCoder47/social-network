@@ -13,8 +13,8 @@ function App(props) {
         <div className='main'>
           <Navbar navbar={props.state.navbar} />
           <Routes>
-            <Route path="/" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updatePostText={props.updatePostText}/>} />
-            <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.state.dialogsPage} addMessage={props.addMessage} updateMessageText={props.updateMessageText}/>} />
+            <Route path="/" element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
+            <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch} />} />
           </Routes>
         </div>
       </BrowserRouter>

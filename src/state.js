@@ -7,7 +7,7 @@ let store = {
                 { id: 3, name: "Anton" },
                 { id: 4, name: "Stepik" },
             ],
-        
+
             messages: [
                 { id: 1, message: "Hello" },
                 { id: 2, message: "How are you" },
@@ -16,7 +16,7 @@ let store = {
             ],
             newMessageText: ""
         },
-        
+
         profilePage: {
             posts: [
                 {
@@ -37,62 +37,76 @@ let store = {
             ],
             newPostText: ""
         },
-    
+
         navbar: {
             friends: [
-                { 
+                {
                     id: 1,
                     ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
-                    name: "Dima" },
-                { 
-                    ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg", name: "Egor" },
-                {   
+                    name: "Dima"
+                },
+                {
+                    ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg", name: "Egor"
+                },
+                {
                     id: 2,
                     ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
-                    name: "Anton" },
-                { 
+                    name: "Anton"
+                },
+                {
                     id: 3,
                     ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
-                    name: "Stepik" },
+                    name: "Stepik"
+                },
             ],
         }
+    },
+    _callSubcriber() {
+
     },
 
     getState() {
         return this._state;
     },
-
-    _rerenderTree () {
-
-    },
-    addPost () { 
-        let newPost = {
-            id: 4,
-            text: this._state.profilePage.newPostText,
-            ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
-        };
-    
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText='';
-        this._rerenderTree(this._state);
-    },
-    updatePostText (newText) {
-        this._state.profilePage.newPostText = newText;
-        this._rerenderTree(this._state);
+    subscribe(observer) {
+        this._callSubcriber = observer;
     },
 
-    addMessage () {
+    addMessage() {
         let newMessage = { id: 5, message: this._state.dialogsPage.newMessageText };
         this._state.dialogsPage.messages.push(newMessage);
-        this._state.newMessageText = "";
-        this._rerenderTree(this._state);
+        this._state.dialogsPage.newMessageText = "";
+        this._callSubcriber(this._state);
     },
-    updateMessageText (newText) {
+    updateMessageText(newText) {
         this._state.dialogsPage.newMessageText = newText;
-        this._rerenderTree(this._state);
+        this._callSubcriber(this._state);
     },
-    subscribe (observer) {
-        this._rerenderTree = observer;
+
+
+    dispatch(action) {
+        if (action.type === "ADD-POST") {
+            let newPost = {
+                id: 4,
+                text: this._state.profilePage.newPostText,
+                ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            };
+
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubcriber(this._state);
+        } else if (action.type === "UPDATE-POST-TEXT") {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubcriber(this._state);
+        } else if (action.type === "ADD-MESSAGE") {
+            let newMessage = { id: 5, message: this._state.dialogsPage.newMessageText };
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.newMessageText = "";
+            this._callSubcriber(this._state);
+        } else if (action.type === "UPDATE-MESSAGE-TEXT") {
+            this._state.dialogsPage.newMessageText = action.newText;
+            this._callSubcriber(this._state);
+        }
     }
 }
 
