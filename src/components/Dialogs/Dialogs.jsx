@@ -25,8 +25,12 @@ const Dialogs = (props) => {
     let newMessage = React.createRef();
 
     let addMessage = () => {
+        props.addMessage();
+    }
+
+    let onMessageChange = () => {
         let text = newMessage.current.value;
-        alert(text);
+        props.updateMessageText(text);
     }
 
     return (
@@ -38,7 +42,7 @@ const Dialogs = (props) => {
                 {MessagesElements}
 
                 <div className={s.inputBlock}>
-                    <input type="text" ref={newMessage}/>
+                    <input type="text" ref={newMessage} value={props.dialogsPage.newMessageText} onChange={onMessageChange}/>
                     <button onClick={addMessage}>Send</button>
                 </div>
             </div>
