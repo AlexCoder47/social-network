@@ -10,7 +10,7 @@ const Navbar = (props) => {
                 <Link to="/dialogs">Dialogs</Link>
             </nav>
 
-            <Friends friends={props.navbar.friends}/>
+            <Friends friends={props.sidebar.friends}/>
         </div>
     )
 }

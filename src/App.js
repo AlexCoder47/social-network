@@ -11,7 +11,7 @@ function App(props) {
       <BrowserRouter>
         <Header />
         <div className='main'>
-          <Navbar navbar={props.state.navbar} />
+          <Navbar sidebar={props.state.sidebar} />
           <Routes>
             <Route path="/" element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
             <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch} />} />
