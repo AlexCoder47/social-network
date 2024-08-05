@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import s from './Dialogs.module.css';
 import React from 'react';
-import { addMessageActionCreator, updateMessageTextActionCreator } from '../../state';
+import { addMessageActionCreator, updateMessageTextActionCreator } from '../../redux/dialogs-reducer';
+
 
 const Dialog = (props) => {
     return (

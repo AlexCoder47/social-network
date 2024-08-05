@@ -1,3 +1,6 @@
+import dialogsReducer from "./dialogs-reducer";
+import profileReducer from "./profile-reducer";
+
 let store = {
     _state: {
         dialogsPage: {
@@ -85,55 +88,12 @@ let store = {
 
 
     dispatch(action) {
-        if (action.type === "ADD-POST") {
-            let newPost = {
-                id: 4,
-                text: this._state.profilePage.newPostText,
-                ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
-            };
-
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubcriber(this._state);
-        } else if (action.type === "UPDATE-POST-TEXT") {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubcriber(this._state);
-        } else if (action.type === "ADD-MESSAGE") {
-            let newMessage = { id: 5, message: this._state.dialogsPage.newMessageText };
-            this._state.dialogsPage.messages.push(newMessage);
-            this._state.dialogsPage.newMessageText = "";
-            this._callSubcriber(this._state);
-        } else if (action.type === "UPDATE-MESSAGE-TEXT") {
-            this._state.dialogsPage.newMessageText = action.newText;
-            this._callSubcriber(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        
+        this._callSubcriber(this._state);    
     }
 }
 
-export const addPostActionCreator = () => {
-    return {
-        type: "ADD-POST"
-    }
-}
-
-export const updatePostTextActionCreator = (text) => {
-    return {
-        type: "UPDATE-POST-TEXT",
-        newText: text
-    }
-}
-
-export const addMessageActionCreator = () => {
-    return {
-        type: "ADD-MESSAGE"
-    }
-}
-
-export const updateMessageTextActionCreator = (text) => {
-    return {
-        type: "UPDATE-MESSAGE-TEXT",
-        newText: text
-    }
-}
 
 export default store;
