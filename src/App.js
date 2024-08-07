@@ -11,10 +11,10 @@ function App(props) {
       <BrowserRouter>
         <Header />
         <div className='main'>
-          <Navbar sidebar={props.store.getState().sidebar} />
+          <Navbar />
           <Routes>
-            <Route path="/" element={<Profile store={props.store}/>} />
-            <Route path="/dialogs/*" element={<DialogsContainer store={props.store} />} />
+            <Route path="/" element={<Profile/>} />
+            <Route path="/dialogs/*" element={<DialogsContainer/>} />
           </Routes>
         </div>
       </BrowserRouter>
