@@ -22,20 +22,24 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD-POST":
+        case "ADD-POST": {
             let newPost = {
                 id: 4,
                 text: state.newPostText,
                 ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
             };
-    
-            state.posts.push(newPost);
-            state.newPostText = '';
-            return state;
-    
-        case "UPDATE-POST-TEXT":
-            state.newPostText = action.newText;
-            return state;
+            
+            let stateCopy = {...state};
+            stateCopy.posts = [...state.posts]
+            stateCopy.posts.push(newPost);
+            stateCopy.newPostText = '';
+            return stateCopy;
+        }
+        case "UPDATE-POST-TEXT": {
+            let stateCopy = {...state}
+            stateCopy.newPostText = action.newText;
+            return stateCopy;
+        }
         default:
             return state;
     }
