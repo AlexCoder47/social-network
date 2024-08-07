@@ -20,19 +20,19 @@ const Message = (props) => {
 
 const Dialogs = (props) => {
 
-    let DialogsElements = props.dialogsPage.dialogs.map(e => <Dialog id={e.id} name={e.name} />)
+    let DialogsElements = props.dialogs.map(e => <Dialog id={e.id} name={e.name} />)
 
-    let MessagesElements = props.dialogsPage.messages.map(e => <Message message={e.message} />)
+    let MessagesElements = props.messages.map(e => <Message message={e.message} />)
 
     let newMessage = React.createRef();
 
-    let addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+    let onAddMessage = () => {
+        props.addMessage();
     }
 
     let onMessageChange = () => {
         let text = newMessage.current.value;
-        props.dispatch(updateMessageTextActionCreator(text));
+        props.updateMessageText(text);
     }
 
     return (
@@ -44,8 +44,8 @@ const Dialogs = (props) => {
                 {MessagesElements}
 
                 <div className={s.inputBlock}>
-                    <input type="text" ref={newMessage} value={props.dialogsPage.newMessageText} onChange={onMessageChange}/>
-                    <button onClick={addMessage}>Send</button>
+                    <input type="text" ref={newMessage} value={props.newMessageText} onChange={onMessageChange}/>
+                    <button onClick={onAddMessage}>Send</button>
                 </div>
             </div>
         </div>
