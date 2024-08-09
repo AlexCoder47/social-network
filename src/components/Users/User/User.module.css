@@ -1,0 +1,32 @@
+.User {
+    width: 80%;
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.User .avaDescr {
+    display: flex;
+    gap: 20px;
+}
+
+.User img {
+    width: 80px;
+    border-radius: 50px;
+}
+
+.User h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.User button {
+    width: 180px;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+}

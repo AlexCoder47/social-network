@@ -8,6 +8,7 @@ const Navbar = (props) => {
             <nav>
                 <Link to="/">Profile</Link>
                 <Link to="/dialogs">Dialogs</Link>
+                <Link to="/users">Users</Link>
             </nav>
 
             {/* <Friends friends={props.sidebar.friends}/> */}

@@ -1,0 +1,20 @@
+.Users {
+    width: 82vw;
+    background-color: #3e3e3e;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #FFDB00;
+    padding: 20px;
+}
+
+.Users h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.usersBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
