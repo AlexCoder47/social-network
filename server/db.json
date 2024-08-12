@@ -1,5 +1,5 @@
 {
-    "list": [
+    "users": [
         {
             "id": 1,
             "friend": true,
@@ -25,6 +25,114 @@
             "name": "Ivan Polyakov",
             "age": "19",
             "location": "Tumen, Russia",
+            "status": "online"
+        },
+        {
+            "id": 4,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 5,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 6,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 7,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 8,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 9,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 10,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 11,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 12,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 13,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 14,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
+            "status": "online"
+        },
+        {
+            "id": 15,
+            "friend": false,
+            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
+            "name": "Oleg Kulikov",
+            "age": "43",
+            "location": "Vladivostok, Russia",
             "status": "online"
         }
     ]

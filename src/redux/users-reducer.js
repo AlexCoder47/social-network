@@ -1,5 +1,8 @@
 let initialState = {
-    users: []
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -7,9 +10,9 @@ const usersReducer = (state = initialState, action) => {
         case "ADD-FRIEND":
             return {
                 ...state,
-                users: state.users.map( e => {
+                users: state.users.map(e => {
                     if (e.id === action.userId) {
-                        return {...e, friend: true}
+                        return { ...e, friend: true }
                     }
                     return e;
                 }),
@@ -17,9 +20,9 @@ const usersReducer = (state = initialState, action) => {
         case "UPDATE-FRIEND":
             return {
                 ...state,
-                users: state.users.map( e => {
+                users: state.users.map(e => {
                     if (e.id === action.userId) {
-                        return {...e, friend: false}
+                        return { ...e, friend: false }
                     }
                     return e;
                 }),
@@ -27,7 +30,17 @@ const usersReducer = (state = initialState, action) => {
         case "SET-USERS":
             return {
                 ...state,
-                users: [...state.users, ...action.users]
+                users: action.users
+            }
+        case "SET-CURRENT-PAGE":
+            return {
+                ...state,
+                currentPage: action.currentPage
+            }
+        case "SET-TOTAL-USERS-COUNT":
+            return {
+                ...state,
+                totalUsersCount: action.totalUsersCount
             }
         default:
             return state;
@@ -53,6 +66,20 @@ export const setUsersAC = (users) => {
     return {
         type: "SET-USERS",
         users
+    }
+}
+
+export const setCurrentPageAC = (currentPage) => {
+    return {
+        type: "SET-CURRENT-PAGE",
+        currentPage
+    }
+}
+
+export const setTotalUsersCountAC = (totalUsersCount) => {
+    return {
+        type: "SET-TOTAL-USERS-COUNT",
+        totalUsersCount
     }
 }
 
