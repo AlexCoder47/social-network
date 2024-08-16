@@ -1,27 +1,27 @@
 import React from "react";
-import s from "./Users.module.css";
-import axios from "axios";
-import User from "./User/User";
 import Users from "./Users";
+import { UsersAPI } from "../../api/api";
 
 class UsersAPIComponent extends React.Component {
 
+    
+
     componentDidMount() {
         this.props.toggleIsFetching(true);
-        axios.get(`http://localhost:3001/users?_page=${this.props.currentPage}&_per_page=${this.props.pageSize}`).then(response => {
-            // console.log(response);
+        UsersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
+            //console.log(data);
             this.props.toggleIsFetching(false); 
-            this.props.setUsers(response.data.data);
-            this.props.setTotalUsersCount(response.data.items);
+            this.props.setUsers(data.items);
+            this.props.setTotalUsersCount(data.totalCount);
         })
     }
 
     onPageChanged = (p) => {
         this.props.toggleIsFetching(true);
         this.props.setCurrentPage(p);
-        axios.get(`http://localhost:3001/users?_page=${p}&_per_page=${this.props.pageSize}`).then(response => {
+        UsersAPI.getUsers(p, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false);
-            this.props.setUsers(response.data.data);
+            this.props.setUsers(data.items);
         })
     }
 

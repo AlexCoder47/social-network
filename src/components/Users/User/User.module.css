@@ -30,3 +30,8 @@
     border: none;
     border-radius: 5px;
 }
+
+.User span {
+    text-decoration: underline;
+    font-weight: bold;
+}

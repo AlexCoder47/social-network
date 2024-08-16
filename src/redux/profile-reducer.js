@@ -16,7 +16,8 @@ let initialState = {
             text: "that`s cool",
         },
     ],
-    newPostText: ""
+    newPostText: "",
+    profile: null
 }
 
 
@@ -35,27 +36,18 @@ const profileReducer = (state = initialState, action) => {
             }
         }
         case "UPDATE-POST-TEXT": {
-            return {
-                ...state,
-                newPostText: action.newText,
-            }
+            return {...state, newPostText: action.newText,}
+        }
+        case "SET-USER-PROFILE": {
+            return {...state, profile: action.userProfile,}
         }
         default:
             return state;
     }
 }
 
-export const addPostActionCreator = () => {
-    return {
-        type: "ADD-POST"
-    }
-}
-
-export const updatePostTextActionCreator = (text) => {
-    return {
-        type: "UPDATE-POST-TEXT",
-        newText: text
-    }
-}
+export const addPostActionCreator = () => {return {type: "ADD-POST"}};
+export const updatePostTextActionCreator = (text) => {return {type: "UPDATE-POST-TEXT",newText: text}};
+export const setUserProfile = (userProfile) => {return {type: "SET-USER-PROFILE", userProfile}}
 
 export default profileReducer;

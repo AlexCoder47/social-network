@@ -1,16 +1,16 @@
 {
     "users": [
         {
-            "id": 1,
+            "id": "1",
             "friend": true,
-            "ava": "img/stepik.jpg",
+            "ava": "/img/stepik.jpg",
             "name": "Stepanidus Stepikovich",
             "age": "8",
             "location": "Moscow, Russia",
             "status": "last seen Aug 04 at 16:16"
         },
         {
-            "id": 2,
+            "id": "2",
             "friend": false,
             "ava": "https://cdn-edge.kwork.ru/files/avatar/large_r/44/4289180-2.jpg",
             "name": "Alex Coder",
@@ -19,16 +19,16 @@
             "status": "online"
         },
         {
-            "id": 3,
+            "id": "3",
             "friend": true,
-            "ava": "img/ivan.jpg",
+            "ava": "/img/ivan.jpg",
             "name": "Ivan Polyakov",
             "age": "19",
             "location": "Tumen, Russia",
             "status": "online"
         },
         {
-            "id": 4,
+            "id": "4",
             "friend": false,
             "ava": "https://sun1-20.userapi.com/s/v1/ig2/crnOJOpdAGwSqDDImvX8_0adllNlwhdAOstefz5NAD16QO6sEBS-GrgzIjI5s-6GHTmnXBr7YFj3jY-gpN7dXeh3.jpg?quality=95&crop=2,163,851,851&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&u=EdkjAi0oB3B7qaKWmYvpVM3JDnktmyh8WG6CGLVqs8M&cs=200x200",
             "name": "Vadim Petrov",
@@ -37,40 +37,90 @@
             "status": "online"
         },
         {
-            "id": 5,
+            "id": "5",
             "friend": false,
             "ava": "https://sun1-84.userapi.com/s/v1/ig2/zpz_Zubr2BiqrI_gbdmPzRI98moXCtbFdz5WqQbaJG2sPQ-y9mTMifyM3TSe7RF8Qtg8xKF3Gudcg6UeEfnU3xhO.jpg?quality=95&crop=1,640,1919,1919&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440&ava=1&cs=100x100",
             "name": "Nina Izotova",
-            "age": "43",
+            "age": "19",
             "location": "Moscow, Russia",
             "status": "online"
         },
         {
-            "id": 6,
+            "id": "6",
             "friend": false,
             "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
             "name": "Oleg Kulikov",
             "age": "43",
             "location": "Vladivostok, Russia",
+            "status": "online"
+        }
+    ],
+    "profile": [
+        {
+            "id": "1",
+            "friend": true,
+            "ava": "/img/stepik.jpg",
+            "name": "Stepanidus Stepikovich",
+            "age": "8",
+            "location": "Moscow, Russia",
+            "family": "divorced",
+            "phone": "89999999999",
+            "status": "last seen Aug 04 at 16:16"
+        },
+        {
+            "id": "2",
+            "friend": false,
+            "ava": "https://cdn-edge.kwork.ru/files/avatar/large_r/44/4289180-2.jpg",
+            "name": "Alex Coder",
+            "age": "18",
+            "location": "Moscow, Russia",
+            "family": "single",
+            "phone": "89999999999",
+            "status": "last seen Aug 04 at 16:16"
+        },
+        {
+            "id": "3",
+            "friend": true,
+            "ava": "/img/ivan.jpg",
+            "name": "Ivan Polyakov",
+            "age": "19",
+            "location": "Tumen, Russia",
+            "family": "married",
+            "phone": "89999999999",
+            "status": "last seen Aug 04 at 16:16"
+        },
+        {
+            "id": "4",
+            "friend": false,
+            "ava": "https://sun1-20.userapi.com/s/v1/ig2/crnOJOpdAGwSqDDImvX8_0adllNlwhdAOstefz5NAD16QO6sEBS-GrgzIjI5s-6GHTmnXBr7YFj3jY-gpN7dXeh3.jpg?quality=95&crop=2,163,851,851&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&u=EdkjAi0oB3B7qaKWmYvpVM3JDnktmyh8WG6CGLVqs8M&cs=200x200",
+            "name": "Vadim Petrov",
+            "age": "19",
+            "location": "Moscow, Russia",
+            "family": "single",
+            "phone": "89999999999",
             "status": "online"
         },
         {
-            "id": 7,
+            "id": "5",
             "friend": false,
-            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
-            "name": "Oleg Kulikov",
-            "age": "43",
-            "location": "Vladivostok, Russia",
+            "ava": "https://sun1-84.userapi.com/s/v1/ig2/zpz_Zubr2BiqrI_gbdmPzRI98moXCtbFdz5WqQbaJG2sPQ-y9mTMifyM3TSe7RF8Qtg8xKF3Gudcg6UeEfnU3xhO.jpg?quality=95&crop=1,640,1919,1919&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440&ava=1&cs=100x100",
+            "name": "Nina Izotova",
+            "age": "19",
+            "location": "Moscow, Russia",
+            "family": "single",
+            "phone": "89999999999",
             "status": "online"
-        },
+        }
+    ],
+    "auth": [
         {
-            "id": 8,
-            "friend": false,
-            "ava": "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
-            "name": "Oleg Kulikov",
-            "age": "43",
-            "location": "Vladivostok, Russia",
-            "status": "online"
+            "resultCode": 0,
+            "messages": [],
+            "data": {
+                "userId": "2",
+                "login": "alexc",
+                "email": "alexc@yandex.ru"
+            }
         }
     ]
 }

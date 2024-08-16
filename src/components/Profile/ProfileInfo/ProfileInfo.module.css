@@ -1,4 +1,31 @@
-.ProfileInfo img {
-    width: 1000px;
-    height: 500px;
+.ProfileInfo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-size: 20px;
 }
+
+.ProfileInfo img {
+    width: 200px;
+    border-radius: 150px;
+}
+
+.ProfileInfo p {
+    padding: 5px;
+}
+
+.ProfileInfo span  {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.name {
+    font-size: 40px;
+}
+
+.infoBlock {
+    display: flex;
+    gap: 20px;
+}
+
+
