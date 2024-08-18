@@ -30,7 +30,7 @@ class UsersAPIComponent extends React.Component {
     render() {
         return (
             <>
-            <Users totalUsersCount={this.props.totalUsersCount} pageSize={this.props.pageSize} users={this.props.users} addFriend={this.props.addFriend} removeFriend={this.props.removeFriend} currentPage={this.props.currentPage} onPageChanged={this.onPageChanged} isFetching={this.props.isFetching}/>
+            <Users totalUsersCount={this.props.totalUsersCount} pageSize={this.props.pageSize} users={this.props.users} addFriend={this.props.addFriend} removeFriend={this.props.removeFriend} currentPage={this.props.currentPage} onPageChanged={this.onPageChanged} isFetching={this.props.isFetching} toggleFollowingInProgress={this.props.toggleFollowingInProgress} followingInProgress={this.props.followingInProgress}/>
             </>
         )
     }

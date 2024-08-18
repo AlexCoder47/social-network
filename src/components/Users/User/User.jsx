@@ -10,7 +10,7 @@ const User = (props) => {
                 <div className={s.avaDescr}>
                     <img src={props.ava} alt="ava" />
                     <div>
-                        <h4>{props.name}</h4> 
+                        <h4>{props.name}</h4>
                         <p><span>Status</span>: {props.status}</p>
                     </div>
                 </div>
@@ -23,22 +23,29 @@ const User = (props) => {
 
             {
                 props.friend
-                    ? <button onClick={() => {
-                        UsersAPI.updateFriends(props.id).then(response => {
+                    ? <button disabled={props.followingInProgress} onClick={() => {
+                        console.log("click");
+                        props.toggleFollowingInProgress(true);
+                        UsersAPI.updateFriends(props.id, "delete").then(response => {
                             console.log(response);
-                            if (response.resultCode === 0){
-                                props.removeFriend(props.id)
-                            }
-                            
+
+
+                            props.removeFriend(props.id)
+
+
+                            props.toggleFollowingInProgress(false);
+
                         })
                     }}>Удалить из друзей</button>
-                    : <button onClick={() => {
-                        UsersAPI.updateFriends(props.id).then(response => {
+                    : <button disabled={props.followingInProgress} onClick={() => {
+                        props.toggleFollowingInProgress(true);
+                        UsersAPI.updateFriends(props.id, "add").then(response => {
                             console.log(response);
-                            if (response.resultCode === 0){
-                                props.addFriend(props.id)
-                            }
-                            
+
+                            props.addFriend(props.id)
+
+
+                            props.toggleFollowingInProgress(false);
                         })
                     }}>Добавить в друзья</button>
             }
