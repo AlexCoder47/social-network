@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { addFriend, removeFriend, setCurrentPage, setTotalUsersCount, setUsers, toggleFollowingInProgress, toggleIsFetching } from "../../redux/users-reducer";
+import { addFriend, followTC, getUsersThunkCreator, removeFriend, setCurrentPage, setTotalUsersCount, toggleFollowingInProgress, unfollowTC } from "../../redux/users-reducer";
 import UsersAPIComponent from "./UsersAPIComponent";
 
 let mapStateToProps = (state) => {
@@ -16,6 +16,6 @@ let mapStateToProps = (state) => {
 
 
 
-const UsersContainer = connect(mapStateToProps, {addFriend,removeFriend,setUsers,setCurrentPage,setTotalUsersCount,toggleIsFetching, toggleFollowingInProgress})(UsersAPIComponent);
+const UsersContainer = connect(mapStateToProps, {addFriend,removeFriend,setCurrentPage,setTotalUsersCount, toggleFollowingInProgress, getUsersThunkCreator, followTC, unfollowTC})(UsersAPIComponent);
 
 export default UsersContainer;

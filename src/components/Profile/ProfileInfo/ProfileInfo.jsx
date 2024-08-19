@@ -17,10 +17,7 @@ const ProfileInfo = (props) => {
                         <p><span>About me</span>:  {props.profile.aboutMe}</p>
                         <p><span>Contacts</span>: <a href={props.profile.contacts.vk}>{props.profile.contacts.vk}</a> </p>
                     </div>
-                    {/* <div>
-                        <p><span>Family</span>: {props.profile.family}</p>
-                        <p><span>Phone</span>: {props.profile.phone}</p>
-                    </div> */}
+
                 </div>
 
 

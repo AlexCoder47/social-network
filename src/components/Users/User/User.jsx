@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import s from "./User.module.css";
-import axios from "axios";
-import { UsersAPI } from "../../../api/api";
 
 const User = (props) => {
     return (
@@ -23,30 +21,11 @@ const User = (props) => {
 
             {
                 props.friend
-                    ? <button disabled={props.followingInProgress} onClick={() => {
-                        console.log("click");
-                        props.toggleFollowingInProgress(true);
-                        UsersAPI.updateFriends(props.id, "delete").then(response => {
-                            console.log(response);
-
-
-                            props.removeFriend(props.id)
-
-
-                            props.toggleFollowingInProgress(false);
-
-                        })
+                    ? <button disabled={props.followingInProgress.some(id=>id===props.id)} onClick={() => {
+                        props.unfollowTC(props.id);
                     }}>Удалить из друзей</button>
-                    : <button disabled={props.followingInProgress} onClick={() => {
-                        props.toggleFollowingInProgress(true);
-                        UsersAPI.updateFriends(props.id, "add").then(response => {
-                            console.log(response);
-
-                            props.addFriend(props.id)
-
-
-                            props.toggleFollowingInProgress(false);
-                        })
+                    : <button disabled={props.followingInProgress.some(id=>id===props.id)} onClick={() => {
+                        props.followTC(props.id);
                     }}>Добавить в друзья</button>
             }
         </div>

@@ -10,12 +10,22 @@ export const UsersAPI = {
     getUsers(currentPage, pageSize) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => { return response.data })
     },
-    updateFriends(id, action) {
-        if (action==="add") {
-            return instance.post(`follow/` + id).then(response => { return response.data })
-        } else if (action==="delete") {
-            return instance.delete(`follow/` + id).then(response => { return response.data })
-        }
-        
+    addFriends(id) {
+        return instance.post(`follow/` + id).then(response => { return response.data })
+    },
+    removeFriends(id) {
+        return instance.delete(`follow/` + id).then(response => { return response.data })
+    }
+}
+
+export const ProfileAPI = {
+    getProfile(id) {
+        return instance.get(`profile/` + id).then(response => { return response.data })
+    }
+}
+
+export const HeaderAPI = {
+    getAuthMe() {
+        return instance.get(`auth/me`).then(response => { return response.data })
     }
 }

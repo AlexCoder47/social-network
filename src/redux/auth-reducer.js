@@ -1,3 +1,5 @@
+import { HeaderAPI } from "../api/api";
+
 let initialState = {
     userId: null,
     login: null,
@@ -15,6 +17,17 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setAuthUserData = (userId, login, email) => ({type: "SET_USER_DATA", data: {userId, login, email}})
+export const setAuthUserData = (userId, login, email) => ({type: "SET_USER_DATA", data: {userId, login, email}});
+
+export const getAuthMeTC = () => {
+    return (dispatch) => {
+        HeaderAPI.getAuthMe().then(response => {
+            if (response.resultCode === 0) {
+                let {id, login, email} = response.data;
+                dispatch(setAuthUserData(id, login, email));
+            }
+        })
+    }
+}
 
 export default authReducer;

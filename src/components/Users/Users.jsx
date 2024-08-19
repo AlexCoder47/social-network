@@ -14,7 +14,7 @@ const Users = (props) => {
     }
 
     let usersElements = props.users.map(e => {
-        return <User key={e.id} id={e.id} friend={e.followed} ava={e.photos.small} name={e.name} status={e.status} addFriend={props.addFriend} removeFriend={props.removeFriend} followingInProgress={props.followingInProgress} toggleFollowingInProgress={props.toggleFollowingInProgress}/>
+        return <User key={e.id} id={e.id} friend={e.followed} ava={e.photos.small} name={e.name} status={e.status} addFriend={props.addFriend} removeFriend={props.removeFriend} followingInProgress={props.followingInProgress} toggleFollowingInProgress={props.toggleFollowingInProgress} followTC={props.followTC} unfollowTC={props.unfollowTC}/>
     });
 
     return (
