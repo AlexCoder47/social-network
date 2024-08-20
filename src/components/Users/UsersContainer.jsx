@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { addFriend, followTC, getUsersThunkCreator, removeFriend, setCurrentPage, setTotalUsersCount, toggleFollowingInProgress, unfollowTC } from "../../redux/users-reducer";
 import UsersAPIComponent from "./UsersAPIComponent";
+import { compose } from "redux";
 
 let mapStateToProps = (state) => {
     return {
@@ -15,7 +16,6 @@ let mapStateToProps = (state) => {
 }
 
 
-
-const UsersContainer = connect(mapStateToProps, {addFriend,removeFriend,setCurrentPage,setTotalUsersCount, toggleFollowingInProgress, getUsersThunkCreator, followTC, unfollowTC})(UsersAPIComponent);
-
-export default UsersContainer;
+export default compose(
+    connect(mapStateToProps, {addFriend,removeFriend,setCurrentPage,setTotalUsersCount, toggleFollowingInProgress, getUsersThunkCreator, followTC, unfollowTC})
+)(UsersAPIComponent);;
