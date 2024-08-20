@@ -1,5 +1,6 @@
 import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -15,7 +16,7 @@ const ProfileInfo = (props) => {
                 <div className={s.infoBlock}>
                     <div>
                         <p><span>About me</span>:  {props.profile.aboutMe}</p>
-                        <p><span>Contacts</span>: <a href={props.profile.contacts.vk}>{props.profile.contacts.vk}</a> </p>
+                        <ProfileStatus status="hello"/>
                     </div>
 
                 </div>
