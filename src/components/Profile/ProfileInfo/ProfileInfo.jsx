@@ -16,7 +16,7 @@ const ProfileInfo = (props) => {
                 <div className={s.infoBlock}>
                     <div>
                         <p><span>About me</span>:  {props.profile.aboutMe}</p>
-                        <ProfileStatus status="hello"/>
+                        <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                     </div>
 
                 </div>
