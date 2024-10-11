@@ -1,0 +1,38 @@
+.Login {
+    width: 82vw;
+    background-color: #3e3e3e;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #FFDB00;
+}
+
+.Login h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.Login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    margin: 40px;
+}
+
+.Login input {
+    width: 400px;
+    padding: 7px;
+    border: 0;
+    border-radius: 6px;
+}
+
+.Login .checkbox {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.Login .checkbox input {
+    width: 15px;
+}
