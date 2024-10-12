@@ -1,6 +1,7 @@
 import { Link, Navigate } from 'react-router-dom';
 import s from './Dialogs.module.css';
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
 
 const Dialog = (props) => {
@@ -18,6 +19,17 @@ const Message = (props) => {
 }
 
 
+const DialogsForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field component='input'  placeholder='Input text' name='message'/>
+            <button>Send</button>
+        </form>
+    )
+}
+
+const DialogsReduxForm = reduxForm({form: 'dialogs'})(DialogsForm);
+
 
 const Dialogs = (props) => {
 
@@ -27,18 +39,11 @@ const Dialogs = (props) => {
 
     let newMessage = React.createRef();
 
-    let onAddMessage = () => {
-        props.addMessage();
-    }
-
-    let onMessageChange = () => {
-        let text = newMessage.current.value;
-        props.updateMessageText(text);
-    }
-
     // if (props.isAuth == false) {
     //     return <Navigate to="/login"/>
     // }
+
+    const onSubmit = (values) => {props.addMessage(values.message)};
 
     return (
         <div className={s.Dialogs}>
@@ -49,8 +54,7 @@ const Dialogs = (props) => {
                 {MessagesElements}
 
                 <div className={s.inputBlock}>
-                    <input type="text" ref={newMessage} value={props.newMessageText} onChange={onMessageChange}/>
-                    <button onClick={onAddMessage}>Send</button>
+                    <DialogsReduxForm onSubmit={onSubmit}/>
                 </div>
             </div>
         </div>

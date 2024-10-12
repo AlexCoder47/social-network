@@ -1,8 +1,18 @@
 import React from 'react';
 import Post from './Post/Post';
 import s from './Posts.module.css';
+import { Field, reduxForm } from 'redux-form';
 
+const PostsForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field component='input' name='post' placeholder='Input text'/>
+            <button>Send</button>
+        </form> 
+    )
+}
 
+const PostsReduxForm = reduxForm({form: 'post'})(PostsForm);
 
 const Posts = (props) => {
 
@@ -10,20 +20,12 @@ const Posts = (props) => {
 
     let newPost = React.createRef();
 
-    let onAddPost = () => {
-        props.addPost();
-    }
-
-    let onPostChange = () => {
-        let text = newPost.current.value;
-        props.updatePostText(text);
-    }
+    const onSubmit = (values) => {props.addPost(values.post)};
 
     return (
         <div className={s.Posts}> 
             <div className={s.addPost}>
-               <input type="text" ref={newPost} value={props.newPostText} onChange={onPostChange}/>
-               <button onClick={onAddPost}>Send</button>
+               <PostsReduxForm onSubmit={onSubmit}/>
             </div>
 
             {PostsElememts}

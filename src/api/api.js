@@ -35,3 +35,9 @@ export const HeaderAPI = {
         return instance.get(`auth/me`).then(response => { return response.data })
     }
 }
+
+export const LoginAPI = {
+    onLogin() {
+        return instance.post('auth/login').then(response => { return response.data })
+    }
+}

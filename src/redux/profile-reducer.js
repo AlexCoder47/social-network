@@ -29,7 +29,7 @@ const profileReducer = (state = initialState, action) => {
         case "ADD-POST": {
             let newPost = {
                 id: 4,
-                text: state.newPostText,
+                text: action.post,
                 ava: "https://flomaster.top/o/uploads/posts/2024-02/1708408635_flomaster-top-p-serie-lyudi-vkontakte-risunok-4.jpg",
             };
             return {
@@ -52,8 +52,7 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = () => {return {type: "ADD-POST"}};
-export const updatePostTextActionCreator = (text) => {return {type: "UPDATE-POST-TEXT", newText: text}};
+export const addPostActionCreator = (post) => {return {type: "ADD-POST", post}};
 export const setUserProfile = (userProfile) => {return {type: "SET-USER-PROFILE", userProfile}};
 export const setStatus = (status) => {return {type: "SET-STATUS", status}}
 

@@ -51,6 +51,9 @@ button {
     height: 30px;
 }
 
-input {
-    width: 250px;
+.Dialogs input {
+    width: 400px;
+    padding: 7px;
+    border: 0;
+    border-radius: 6px;
 }
