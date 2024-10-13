@@ -6,7 +6,9 @@ const Header = (props) => {
         <div className={s.Header}>
             <p>Simple</p>
             <div className={s.loginBlock}>
-                { props.isAuth ? props.login : <Link to='/login'>Login</Link>}
+                { props.isAuth 
+                    ? <div> {props.login} - <button onClick={props.logout}>Log out</button></div>
+                    : <Link to='/login'>Login</Link>}
             </div>
         </div>
     )
