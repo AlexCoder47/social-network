@@ -2,6 +2,8 @@ import { Link, Navigate } from 'react-router-dom';
 import s from './Dialogs.module.css';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Input } from '../common/FormsControl/FormsControl';
+import { maxLengthCreator, required } from '../../utils/validators/validators';
 
 
 const Dialog = (props) => {
@@ -19,10 +21,12 @@ const Message = (props) => {
 }
 
 
+let maxLength10 = maxLengthCreator(10);
+
 const DialogsForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field component='input'  placeholder='Input text' name='message'/>
+            <Field component={Input}  placeholder='Input text' name='message' validate={[required, maxLength10]}/>
             <button>Send</button>
         </form>
     )
