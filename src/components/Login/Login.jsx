@@ -1,5 +1,6 @@
 import { Field, reduxForm } from 'redux-form';
 import s from './Login.module.css';
+import s2 from '../common/FormsControl/FormsControl.module.css';
 import { maxLengthCreator, required } from '../../utils/validators/validators';
 import { Input } from '../common/FormsControl/FormsControl';
 import { connect } from 'react-redux';
@@ -21,6 +22,11 @@ const LoginForm = (props) => {
             <div className={s.checkbox}>
                 <Field type="checkbox" name='remember' component={"input"} /> Remember me
             </div>
+            { props.error &&
+            <div className={s2.formError}>
+                {props.error}
+            </div>
+            }
             <div>
                 <button>Login</button>
             </div>
@@ -32,7 +38,7 @@ const LoginReduxForm = reduxForm({form: 'login'})(LoginForm);
 
 const Login = (props) => {
     const onSubmit = (formData) => {props.login(formData.email, formData.password, formData.rememberMe)}
-    if (props.isAuth) {return <Navigate to={"/profile/31548"}/>}
+    if (props.isAuth) {return <Navigate to={"/profile"}/>}
     
     return (
         <div className={s.Login}>
