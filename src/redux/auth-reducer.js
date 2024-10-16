@@ -22,7 +22,7 @@ export const setAuthUserData = (userId, email, login, isAuth) => ({type: "SET_US
 
 export const getAuthMeTC = () => {
     return (dispatch) => {
-        HeaderAPI.getAuthMe().then(response => {
+        return HeaderAPI.getAuthMe().then(response => {
             if (response.resultCode === 0) {
                 let {id, login, email} = response.data;
                 dispatch(setAuthUserData(id, email, login, true));

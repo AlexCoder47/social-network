@@ -5,12 +5,6 @@ import { getAuthMeTC, logout, setAuthUserData } from "../../redux/auth-reducer";
 
 
 class HeaderContainer extends React.Component {
-
-    componentDidMount() {
-        this.props.getAuthMeTC();
-    }
-
-
     render () {
         return <Header {...this.props}/>
     }
