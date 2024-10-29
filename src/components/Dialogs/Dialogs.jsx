@@ -1,4 +1,4 @@
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import s from './Dialogs.module.css';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
