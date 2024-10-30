@@ -2,9 +2,9 @@ import { UsersAPI } from "../api/api";
 
 let initialState = {
     users: [],
-    pageSize: 40,
+    pageSize: 20,
     totalUsersCount: 0,
-    currentPage: 665,
+    currentPage: 1,
     isFetching: false,
     followingInProgress: [],
 };

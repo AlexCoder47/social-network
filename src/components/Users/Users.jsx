@@ -14,7 +14,7 @@ const Users = (props) => {
         <div>
             <div className={s.Users}>
                 <h3>Users</h3>
-                <Paginator totalUsersCount={props.totalUsersCount} pageSize={props.pageSize} currentPage={props.currentPage} onPageChanged={props.onPageChanged}/>
+                <Paginator totalItemsCount={props.totalUsersCount} pageSize={props.pageSize} currentPage={props.currentPage} onPageChanged={props.onPageChanged}/>
                 {props.isFetching ? <Preloader/> : null}
                 <div className={s.usersBlock}>
                     {usersElements}
