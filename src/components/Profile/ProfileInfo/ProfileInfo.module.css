@@ -14,7 +14,7 @@
     padding: 5px;
 }
 
-.ProfileInfo span  {
+.ProfileInfo .about_me  {
     font-weight: bold;
     text-decoration: underline;
 }
@@ -25,7 +25,8 @@
 
 .infoBlock {
     display: flex;
-    gap: 20px;
+    flex-direction: row;
+    align-items: center;
 }
 
 

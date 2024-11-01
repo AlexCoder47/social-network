@@ -9,7 +9,7 @@ let maxLength10 = maxLengthCreator(10);
 
 const PostsForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className={s.formSend}>
             <Field component={Input} name='post' placeholder='Input text' validate={[required, maxLength10]}/>
             <button>Send</button>
         </form> 
