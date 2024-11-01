@@ -12,6 +12,7 @@ const ProfileInfo = (props) => {
     return (
         <div className={s.ProfileInfo}>
             <img src={props.profile.photos.large || userPhoto} alt="" />
+           
             <div>
                 <p className={s.name}>{props.profile.fullName}</p>
                 <div className={s.infoBlock}>
@@ -22,6 +23,9 @@ const ProfileInfo = (props) => {
 
 
             </div>
+            {props.isOwner && 
+                <input type='file'/>
+            }
         </div>
     )
 }
